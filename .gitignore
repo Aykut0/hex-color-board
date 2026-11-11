@@ -3,3 +3,5 @@
 fp-info-cache
 *.lck
 _autosave-*
+# local design-study drafts (not published)
+docs/design-study/
