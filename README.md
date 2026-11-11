@@ -1,52 +1,25 @@
 # HEX Color Board
 
-> **A personal project, made as a gift for a graphic-designer friend.** A small board that turns
-> real-world colors into HEX codes and back.
+A small board that turns real-world colors into HEX codes and back, made as a gift for a graphic-designer friend.
 
 ![3D render of the board](docs/images/board_3d.png)
 
-## What it does
+Designers work with colors as HEX codes (like `#E2552C`). The board offers three ways to go between a color and its code: pick a color from the on-screen spectrum and read its code, type a code and see the color, or point the color sensor on the back at anything around you and capture it.
 
-Designers work with colors as HEX codes (like `#E2552C`). This board gives three ways to move
-between a color and its code:
+An ESP32-S3-Zero runs the interface on a 2.8-inch SPI touch display. A TCS34725 RGB sensor on the back, read over I²C, has its own white LED for consistent lighting, and a small MOSFET switches the display backlight. The board was made in-house on an LPKF laser PCB machine from the files in `hardware/fabrication/`.
 
-1. **Pick** a color from the on-screen spectrum and read its HEX code.
-2. **Type** a HEX code and see the color on the screen.
-3. **Capture** a color from the real world with the color sensor on the back, and see it on
-   screen with its HEX code.
+![Schematic overview, rendered from the KiCad file](docs/images/schematic_overview.png)
 
-## How it works
-
-- **ESP32-S3-Zero** microcontroller board runs the interface.
-- **2.8-inch SPI touch display** for the color picker and HEX entry.
-- **TCS34725 RGB color sensor** on the back, read over I²C, with its own white LED for
-  consistent lighting.
-- A small MOSFET switches the display backlight.
-
-![Schematic overview (rendered from the KiCad file)](docs/images/schematic_overview.png)
-
-## Repository structure
+## Files
 
 ```
-hex-color-board/
-├── hardware/
-│   ├── hex_display.kicad_pro   # KiCad project (open this)
-│   ├── hex_display.kicad_sch
-│   ├── hex_display.kicad_pcb
-│   └── fabrication/            # Gerber and drill files
-└── docs/images/
+hardware/                 KiCad project (open hex_display.kicad_pro)
+hardware/fabrication/     Gerber and drill files
+docs/images/              render and schematic
 ```
-
-## Manufacturing
-
-The board was made in-house on an LPKF laser PCB machine from the files in
-`hardware/fabrication/`.
-
-## Status
 
 Built and working. Photos of the finished board will be added.
 
 ---
 
-**Author:** Yaşar Aykut Altuntop · MSc student, Biomedical Sciences and Engineering, Koç University  
-[LinkedIn](https://linkedin.com/in/aykutaltuntop) · [GitHub](https://github.com/Aykut0)
+Yaşar Aykut Altuntop · Koç University · [LinkedIn](https://linkedin.com/in/aykutaltuntop) · [GitHub](https://github.com/Aykut0)
